@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .fill {
   width: 100%;
   min-width: 100%;
@@ -17,15 +13,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    black,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    black
-  );
-  content: "";
+  background: linear-gradient(black, transparent, transparent, transparent, transparent, black);
+  content: '';
   overflow: hidden;
   pointer-events: none;
 }
