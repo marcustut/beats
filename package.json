@@ -4,12 +4,15 @@
   "author": "Marcus Lee <marcustutorial@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "concurrently 'trunk serve' 'yarn tailwind:dev'",
-    "tailwind:dev": "tailwindcss -i ./styles/global.css -o ./styles/tailwind.css --watch",
-    "tailwind:prod": "NODE_ENV=production tailwindcss -i ./styles/global.css -o ./styles/tailwind.css --minify"
+    "dev": "run-s dev:*",
+    "dev:tailwind": "tailwindcss -i ./styles/global.css -o ./styles/tailwind.css --watch",
+    "dev:trunk": "trunk serve",
+    "build": "run-p build:*",
+    "build:trunk": "trunk build --release",
+    "build:tailwind": "NODE_ENV=production tailwindcss -i ./styles/global.css -o ./styles/tailwind.css --minify"
   },
   "devDependencies": {
-    "concurrently": "^7.4.0",
+    "npm-run-all": "^4.1.5",
     "tailwindcss": "^3.1.8"
   }
 }
