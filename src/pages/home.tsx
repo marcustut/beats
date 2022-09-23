@@ -1,4 +1,5 @@
 import { Suspense } from 'solid-js';
+import { invoke } from '@tauri-apps/api';
 import { useRouteData } from 'solid-app-router';
 
 import Controls from '../components/Controls';
@@ -10,6 +11,8 @@ import type HomeData from './home.data';
 
 export default function Home() {
   const data = useRouteData<typeof HomeData>();
+
+  invoke('greet', { name: 'World' }).then(console.log);
 
   return (
     <Suspense
